@@ -12,17 +12,17 @@ provider "spotify"{
 }
 resource "spotify_playlist" "tollywood" {
     name = "tollywood"
-  tracks = ["7BNQPLWREFSxfyvmVZNW4h"]
+  tracks = ["song id"]
 }
 
-data "spotify_search_track" "A_R_Rahman" {
-  artist = "A.R.Rahman"
+data "spotify_search_track" "artistname" {
+  artist = "artist name"
 }
 resource "spotify_playlist" "peace" {
     name = "peace"
-    tracks = [ data.spotify_search_track.A_R_Rahman.tracks[0].id, 
-                data.spotify_search_track.A_R_Rahman.tracks[1].id,
-                data.spotify_search_track.A_R_Rahman.tracks[2].id
+    tracks = [ data.spotify_search_track.artist.tracks[0].id, 
+                data.spotify_search_track.artist.tracks[1].id,
+                data.spotify_search_track.artist.tracks[2].id
              ]
 
   
